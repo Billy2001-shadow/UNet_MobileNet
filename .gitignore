@@ -1,3 +1,5 @@
 /dog_cat/
 /logs/
 *.pt
+/checkpoints/
+*/__pycache__/
