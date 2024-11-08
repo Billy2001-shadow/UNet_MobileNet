@@ -3,7 +3,7 @@ import torch
 import onnx
 import torch.nn as nn
 
-model_path = "model7/MobileNet_UNet_epoch11.pt"
+model_path = "/home/chenwu/UNet_MobileNet/checkpoints/MobileNet_UNet_epoch_best.pt"
 
 if __name__ == "__main__":
     # input shape尽量选择能被2整除的输入大小
@@ -29,14 +29,14 @@ if __name__ == "__main__":
     output_names = ["output"]
     torch.onnx.export(model,
                       dummy_input,
-                      "unet_deconv_cat_dog.onnx",
+                      "unet_mobilenet_cat_dog.onnx",
                       verbose=True,
                       input_names=input_names,
                       output_names=output_names,
                       opset_version=11)
     print("convert torch format model to onnx ...")
     # [4] confirm the onnx file
-    net = onnx.load("unet_deconv_cat_dog.onnx")
+    net = onnx.load("unet_mobilenet_cat_dog.onnx")
     # check that the IR is well formed
     onnx.checker.check_model(net)
     # print a human readable representation of the graph

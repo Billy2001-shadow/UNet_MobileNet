@@ -1,5 +1,6 @@
 /dog_cat/
 /logs/
 *.pt
+*.onnx
 /checkpoints/
 */__pycache__/
