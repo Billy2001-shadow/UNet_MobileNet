@@ -6,8 +6,8 @@ import torch.nn as nn
 model_path = "/home/chenwu/UNet_MobileNet/checkpoints/MobileNet_UNet_epoch_best.pt"
 
 if __name__ == "__main__":
-    # input shape尽量选择能被2整除的输入大小
-    dummy_input = torch.randn(1, 3, 256, 256)
+    # input shape尽量选择能被2整除的输入大小 640 320
+    dummy_input = torch.randn(1, 3, 320, 320)
     # [1] create network
     model = UNet(n_channels=3, num_classes=3)
     model_dict = model.state_dict()
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     output_names = ["output"]
     torch.onnx.export(model,
                       dummy_input,
-                      "unet_mobilenet_cat_dog.onnx",
+                      "unet_mobilenet_grass.onnx",
                       verbose=True,
                       input_names=input_names,
                       output_names=output_names,

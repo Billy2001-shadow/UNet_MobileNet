@@ -40,7 +40,7 @@ def predict_img(net,
     img = img.unsqueeze(0)
     
     img = img.to(device=device, dtype=torch.float32)
-    np.save("img.npy",img.cpu().numpy())
+    # np.save("img.npy",img.cpu().numpy())
     with torch.no_grad():
         output = net(img)
         output = F.interpolate(output, (full_img.size[1], full_img.size[0]), mode='bilinear')
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     net = UNet(n_channels=3, num_classes=3)
     logging.info("Loading model {}".format(args.model))
 
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     logging.info(f'Using device {device}')
     net.to(device=device)
     net.load_state_dict(torch.load(args.model, map_location=device))

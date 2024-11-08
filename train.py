@@ -23,8 +23,8 @@ from mobilenet.UNet_MobileNet import UNet
 # dir_img = '/home/users/nuo.wu/UNet-MobileNet-Pytorch/image_'
 # dir_mask = '/home/users/nuo.wu/UNet-MobileNet-Pytorch/mask_'
 # dir_checkpoint = '/home/chenwu/UNet-MobileNet/checkpoints'
-dir_img = '/home/chenwu/UNet_MobileNet/dog_cat/image_'
-dir_mask = '/home/chenwu/UNet_MobileNet/dog_cat/mask_'
+dir_img = '/home/chenwu/UNet_MobileNet/lawn_obstacle/image_'
+dir_mask = '/home/chenwu/UNet_MobileNet/lawn_obstacle/mask_'
 dir_checkpoint = '/home/chenwu/UNet_MobileNet/checkpoints'
 
 def train_net(net,

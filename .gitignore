@@ -1,6 +1,8 @@
 /dog_cat/
+/lawn_obstacle/
 /logs/
 *.pt
 *.onnx
 /checkpoints/
+/test_images/
 */__pycache__/
